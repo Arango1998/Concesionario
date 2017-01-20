@@ -11,9 +11,6 @@
     <h:body>
         <f:view>
 
-
-
-
             <h:form>
                 <h1><h:outputText value="Registrar vehiculo"/></h1>
                 <p:panelGrid columns="2">
@@ -30,9 +27,52 @@
                     <p:outputLabel value="CodigoConcesionario:" for="codigoConcesionario" />
                     <p:selectOneMenu id="codigoConcesionario" value="#{VehiculoManagedBean.vehiculo.codigoConcesionario}" required="true" requiredMessage="The CodigoConcesionario field is required.">
                         <!-- TODO: update below reference to list of available items-->
-                        <f:selectItems value="#{concesionarioManageBean.listarConcesionario}"/>
+                        <f:selectItems value="#{ConcesionarioManagedBean.listaConcesionario}" var="con" itemValue="#{con.nit}" itemLabel="#{con.nombre}"/>
                     </p:selectOneMenu>
                 </p:panelGrid>
+            </h:form>
+
+
+            <h:form>
+                <h1><h:outputText value="List"/></h1>
+                <p:dataTable value="#{VehiculoManagedBean.listaVehiculo()}" var="item">
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="CodigoVehiculo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.codigoVehiculo}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Marca"/>
+                        </f:facet>
+                        <h:outputText value="#{item.marca}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Modelo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.modelo}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Nombre"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nombre}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Precio"/>
+                        </f:facet>
+                        <h:outputText value="#{item.precio}"/>
+                    </p:column>
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="CodigoConcesionario"/>
+                        </f:facet>
+                        <h:outputText value="#{item.codigoConcesionario}"/>
+                    </p:column>
+                </p:dataTable>
             </h:form>
 
         </f:view>

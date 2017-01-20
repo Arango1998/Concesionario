@@ -17,7 +17,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class VehiculoFacade extends AbstractFacade<Vehiculo> implements VehiculoFacadeLocal {
 
-    @PersistenceContext(unitName = "Red_conceionariosPU")
+    @PersistenceContext(unitName = "Red_concesionariosPU")
     private EntityManager em;
 
     @Override

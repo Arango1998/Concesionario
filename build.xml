@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="Red_conceionarios" default="default" basedir=".">
-    <description>Builds, tests, and runs the project Red_conceionarios.</description>
+<project name="Red_concesionarios" default="default" basedir=".">
+    <description>Builds, tests, and runs the project Red_concesionarios.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 
